@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Axios from 'axios';
+import axios from 'axios';
 
 class Home extends Component {
     constructor(props) {

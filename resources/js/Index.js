@@ -7,13 +7,13 @@ import Add from './components/Add';
 
 function Index() {
     return (
-        <BrowserRouter>
+        <Router>
             <switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/add" exact component={Add} />
                 <Route path="/:id/edit" exact component={Edit} />
             </switch>
-        </BrowserRouter>
+        </Router>
     );
 }
 

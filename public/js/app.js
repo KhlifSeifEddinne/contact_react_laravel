@@ -69881,7 +69881,7 @@ function Add() {
     className: "card"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-header"
-  }, "Example Component"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Add Component"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
   }, "I'm an example component!")))));
 }
@@ -69920,7 +69920,7 @@ function Edit() {
     className: "card"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-header"
-  }, "Example Component"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Edit Component"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
   }, "I'm an example component!")))));
 }
@@ -69995,7 +69995,7 @@ var Home = /*#__PURE__*/function (_Component) {
     value: function coponentDidMount() {
       var _this2 = this;
 
-      axios.get('/api/contacts').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/contacts').then(function (response) {
         _this2.setState({
           contacts: response.data
         });
@@ -70061,7 +70061,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Index() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("switch", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("switch", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
     exact: true,
     component: _components_Home__WEBPACK_IMPORTED_MODULE_3__["default"]
