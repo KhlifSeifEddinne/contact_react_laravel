@@ -13,6 +13,7 @@
     <body>
         <div class="container mt-4">
             <div id="app">
+              
             </div>
         </div>
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
