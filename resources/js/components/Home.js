@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Axios from 'axios';
 
 class Home extends Component {
     constructor(props) {
@@ -8,6 +9,15 @@ class Home extends Component {
             contacts: []
         }
     }
+
+    coponentDidMount() {
+        axios.get('/api/contacts').then(response => {
+            this.setState({
+                contacts: response.data
+            })
+        }).catch(err => console.log(err));
+    }
+
     render() {
         return
         (<div className="container" >
