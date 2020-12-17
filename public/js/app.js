@@ -69991,8 +69991,8 @@ var Home = /*#__PURE__*/function (_Component) {
   }
 
   _createClass(Home, [{
-    key: "coponentDidMount",
-    value: function coponentDidMount() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/contacts').then(function (response) {
@@ -70006,10 +70006,7 @@ var Home = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return;
-
-      /*#__PURE__*/
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row justify-content-center"
@@ -70021,7 +70018,19 @@ var Home = /*#__PURE__*/function (_Component) {
         className: "card-header"
       }, "All Contacts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, "I'm an example component!")))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        "class": "table"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col"
+      }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col"
+      }, "Phone"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col"
+      }, "Action"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.contacts !== null ? this.state.contacts.map(function (contacts) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: contact.id
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, contact.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, contact.tel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null));
+      }) : null)))))));
     }
   }]);
 
@@ -70040,7 +70049,7 @@ if (document.getElementById('app')) {
 /*!*******************************!*\
   !*** ./resources/js/index.js ***!
   \*******************************/
-/*! exports provided: default */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70059,24 +70068,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-function Index() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("switch", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/",
-    exact: true,
-    component: _components_Home__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/add",
-    exact: true,
-    component: _components_Add__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/:id/edit",
-    exact: true,
-    component: _components_Edit__WEBPACK_IMPORTED_MODULE_4__["default"]
-  })));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  path: "/",
+  exact: true,
+  component: _components_Home__WEBPACK_IMPORTED_MODULE_3__["default"]
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  path: "/add",
+  component: _components_Add__WEBPACK_IMPORTED_MODULE_5__["default"]
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  path: "/:id/edit",
+  component: _components_Edit__WEBPACK_IMPORTED_MODULE_4__["default"]
+}))), document.getElementById("app"));
 
 /***/ }),
 

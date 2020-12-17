@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 class Home extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -10,27 +11,51 @@ class Home extends Component {
         }
     }
 
-    coponentDidMount() {
-        axios.get('/api/contacts').then(response => {
-            this.setState({
-                contacts: response.data
-            })
-        }).catch(err => console.log(err));
+    componentDidMount() {
+        axios.get('/api/contacts')
+            .then(response => {
+                this.setState({
+                    contacts: response.data
+                })
+            }).catch(err => console.log(err));
     }
 
     render() {
-        return
-        (<div className="container" >
+        return <div className="container" >
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
                         <div className="card-header">All Contacts</div>
 
-                        <div className="card-body">I'm an example component!</div>
+                        <div className="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        this.state.contacts !== null
+                                            ? this.state.contacts.map(contacts => (
+                                                <tr key={contact.id}>
+                                                    <td>{contact.name}</td>
+                                                    <td>{contact.tel}</td>
+                                                    <td></td>
+                                                </tr>
+                                            ))
+                                            :
+                                            null
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>);
+        </div>
     }
 }
 

@@ -13,12 +13,20 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('{reactRoutes', function () {
+Route::get('/{path?}', function () {
     return view('welcome');
-})->where('reactRoutes', '^((?|api).)*$');
+});
 
-Auth::routes();
+// Route::get('{reactRoutes', function () {
+//     return view('welcome');
+// })->where('reactRoutes', '^((?|api).)*$');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::resource('/contacts', 'contactController');

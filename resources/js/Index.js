@@ -5,18 +5,17 @@ import Home from './components/Home';
 import Edit from './components/Edit';
 import Add from './components/Add';
 
-function Index() {
-    return (
-        <Router>
-            <switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/add" exact component={Add} />
-                <Route path="/:id/edit" exact component={Edit} />
-            </switch>
-        </Router>
-    );
-}
 
-export default Index;
+ReactDOM.render(
+    <Router>
+        <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/add" component={Add} />
+            <Route path="/:id/edit" component={Edit} />
+        </Switch>
+    </Router>,
+    document.getElementById("app")
+);
+
 
 
