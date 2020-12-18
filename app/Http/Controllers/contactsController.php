@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\contact;
+use DB;
 
 class contactsController extends Controller
 {
@@ -14,7 +16,7 @@ class contactsController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::orderby('created_at', 'desc')->paginate(6);
+        $contacts = Contact::all();
         return response()->json($contacts);
     }
 

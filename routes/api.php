@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+// api/
 Route::get('/contacts', 'contactsController@index');
 Route::post('/contact/create', 'contactsController@create');
 Route::get('/contact/{id}/edit}', 'contactsController@edit');

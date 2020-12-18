@@ -10,8 +10,8 @@ ReactDOM.render(
     <Router>
         <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/add" component={Add} />
-            <Route path="/:id/edit" component={Edit} />
+            <Route path="/add" exact component={Add} />
+            <Route path="/:id/edit" exact component={Edit} />
         </Switch>
     </Router>,
     document.getElementById("app")

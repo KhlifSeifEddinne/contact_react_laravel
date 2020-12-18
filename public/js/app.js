@@ -69995,12 +69995,17 @@ var Home = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/contacts').then(function (response) {
+      //ki tet7al el component Home el method adhiya te5dm awel 7aja
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/contacts') // axios ya3ml des http calls (get,post,delete,put,etc)
+      .then(function (_ref) {
+        var data = _ref.data;
+
         _this2.setState({
-          contacts: response.data
+          // tbadel fil les variables eli 3mlthom fi state
+          contacts: data
         });
-      })["catch"](function (err) {
-        return console.log(err);
+      })["catch"](function (errors) {
+        console.log(errors);
       });
     }
   }, {
@@ -70019,18 +70024,18 @@ var Home = /*#__PURE__*/function (_Component) {
       }, "All Contacts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-        "class": "table"
+        className: "table"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         scope: "col"
       }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         scope: "col"
       }, "Phone"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         scope: "col"
-      }, "Action"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.contacts !== null ? this.state.contacts.map(function (contacts) {
+      }, "Action"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.contacts !== null && this.state.contacts.map(function (contacts) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-          key: contact.id
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, contact.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, contact.tel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null));
-      }) : null)))))));
+          key: contacts.id
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, contacts.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, contacts.tel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null));
+      }))))))));
     }
   }]);
 
@@ -70074,9 +70079,11 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
   component: _components_Home__WEBPACK_IMPORTED_MODULE_3__["default"]
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   path: "/add",
+  exact: true,
   component: _components_Add__WEBPACK_IMPORTED_MODULE_5__["default"]
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   path: "/:id/edit",
+  exact: true,
   component: _components_Edit__WEBPACK_IMPORTED_MODULE_4__["default"]
 }))), document.getElementById("app"));
 

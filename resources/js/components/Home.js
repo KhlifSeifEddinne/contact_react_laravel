@@ -11,14 +11,15 @@ class Home extends Component {
         }
     }
 
-    componentDidMount() {
-        axios.get('/api/contacts')
-            .then(response => {
-                this.setState({
-                    contacts: response.data
+    componentDidMount() { //ki tet7al el component Home el method adhiya te5dm awel 7aja
+        axios.get('/api/contacts') // axios ya3ml des http calls (get,post,delete,put,etc)
+            .then(({ data }) => {
+                this.setState({ // tbadel fil les variables eli 3mlthom fi state
+                    contacts: data
                 })
-            }).catch(err => console.log(err));
+            }).catch(errors => { console.log(errors); })
     }
+
 
     render() {
         return <div className="container" >
@@ -28,7 +29,7 @@ class Home extends Component {
                         <div className="card-header">All Contacts</div>
 
                         <div className="card-body">
-                            <table class="table">
+                            <table className="table">
                                 <thead>
                                     <tr>
                                         <th scope="col">Name</th>
@@ -39,15 +40,13 @@ class Home extends Component {
                                 <tbody>
                                     {
                                         this.state.contacts !== null
-                                            ? this.state.contacts.map(contacts => (
-                                                <tr key={contact.id}>
-                                                    <td>{contact.name}</td>
-                                                    <td>{contact.tel}</td>
-                                                    <td></td>
-                                                </tr>
-                                            ))
-                                            :
-                                            null
+                                        && this.state.contacts.map((contacts) => (
+                                            <tr key={contacts.id}>
+                                                <td>{contacts.name}</td>
+                                                <td>{contacts.tel}</td>
+                                                <td></td>
+                                            </tr>
+                                        ))
                                     }
                                 </tbody>
                             </table>
