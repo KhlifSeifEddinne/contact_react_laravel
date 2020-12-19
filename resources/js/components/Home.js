@@ -17,7 +17,7 @@ class Home extends Component {
                 this.setState({ // tbadel fil les variables eli 3mlthom fi state
                     contacts: data
                 })
-            }).catch(errors => { console.log(errors); })
+            }).catch(errors => { console.log(errors); })//ok
     }
 
 
