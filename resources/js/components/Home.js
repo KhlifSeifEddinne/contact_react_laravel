@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';//55
+import axios from 'axios';
 
 class Home extends Component {
 
